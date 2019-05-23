@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fa">
+<head>
+    <!--<metaTags>-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>هتل‌ها | سامانه رزرواسیون سراج</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--</metaTags>-->
+
+    <!--<stylesheer>-->
+    <link rel="icon" href="app/images/logo.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="app/assets/css/bootstrap-rtl.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/persian-bootstrap-daterangepicker/daterangepicker.css">
+    <link type="text/css" rel="stylesheet" href="semantic/dist/semantic.rtl.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/jquery-ui/themes/base/all.css">
+    <link type="text/css" rel="stylesheet" href="app/css/styles-rtl.css">
+    <!--</stylesheer>-->
+
+    <!--<javascript>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsT0LEBibZ1Svifpe_vzbRNDIvOO7PIlk&language=fa&libraries=places"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widget.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/mouse.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/slider.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="node_modules/moment-jalaali/build/moment-jalaali.js"></script>
+    <script type="text/javascript" src="node_modules/persian-bootstrap-daterangepicker/daterangepicker-persian.js"></script>
+    <script type="text/javascript" src="node_modules/numeral/min/numeral.min.js"></script>
+    <script type="text/javascript" src="semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script type="text/javascript" src="app/js/main.js"></script>
+    <!--</javascript>-->
+</head>
+<body>
+<div id="site-header" style="background-image: url('app/images/headerColorBG.png'), url('app/images/hotelsHeaderBG.png')">
+
+    <!--<topMenu>-->
+    <header class="ui container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="app/images/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">رزرو هتل <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">بلیط هواپیما</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">همکاران تجاری</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">قوانین و مقررات رزرو</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">راهنمای سایت</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning btn-sm follow-up" href="#">پیگیری رزرو</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav float-md-right">
+                    <!--<li class="nav-item active">-->
+                    <!--<div class="dropdown">-->
+                    <!--<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="language-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+
+                    <!--</button>-->
+                    <!--<div class="dropdown-menu" aria-labelledby="language-switcher">-->
+                    <!--<a class="dropdown-item" href="#">انگلیسی</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <li class="nav-item">
+                        <a class="nav-link login-register" href="#">ورود/ثبت نام</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-sm dropdown-toggle" type="button" id="currency-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>IRR</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="currency-switcher">
+                                <a class="dropdown-item" href="#">Dollar</a>
+                                <a class="dropdown-item" href="#">Euro</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--</topMenu>-->
+
+    <!--<pageTitle>-->
+    <div class="ui container page-title">
+        <div class="contents">
+            <h1 class="header">جستجوی هتل های تهران</h1>
+            <h2 class="description">تهران، پایتخت ایران</h2>
+        </div>
+
+        <div class="links">
+            <a href="#" class="socials">اشتراک در شبکه های اجتماعی</a>
+            <a href="#" class="favorite">اضافه به لیست علاقه مندی ها</a>
+        </div>
+
+        <div class="middle-link">
+            <a href="#" class="ui massive primary button m-styled">درباره شهر <strong>تهران</strong></a>
+        </div>
+    </div>
+    <!--</pageTitle>-->
+</div>
+
+<div id="main-content" class="pt70" style="background-color: #ffffff">
+
+    <!--<searchBlock>-->
+    <div id="search-section-sticky" class="ui sticky search-section">
+        <div class="ui accordion">
+            <div class="active title p0 d-xs-block d-sm-block d-md-none">
+                <h4 class="ui center aligned icon header mlr70" style="mix-blend-mode: difference; color: #ffffff;">
+                    جستجو هتل
+                    <i class="dropdown icon"></i>
+                </h4>
+            </div>
+            <div class="active content p0">
+                <div class="transition visible" style="display: block !important;">
+                    <div id="search-section">
+                        <div id="search-box" class="ui container">
+                            <form class="ui form" action="http://www.google.com" method="get" target="_blank">
+                                <div class="ui stackable doubling four column centered grid">
+                                    <div id="search-value" class="five wide column">
+                                        <div class="ui left icon input fluid">
+                                            <i class="search icon"></i>
+                                            <select class="ui search dropdown search-value" name="destination">
+                                                <option value="">جستجوی مقصد (شهر یا هتل)</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <option value="AZ">Arizona</option>
+                                                <option value="AR">Arkansas</option>
+                                                <option value="CA">California</option>
+                                                <option value="CO">Colorado</option>
+                                                <option value="CT">Connecticut</option>
+                                                <option value="DE">Delaware</option>
+                                                <option value="DC">District Of Columbia</option>
+                                                <option value="FL">Florida</option>
+                                                <option value="GA">Georgia</option>
+                                                <option value="HI">Hawaii</option>
+                                                <option value="ID">Idaho</option>
+                                                <option value="IL">Illinois</option>
+                                                <option value="IN">Indiana</option>
+                                                <option value="IA">Iowa</option>
+                                                <option value="KS">Kansas</option>
+                                                <option value="KY">Kentucky</option>
+                                                <option value="LA">Louisiana</option>
+                                                <option value="ME">Maine</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="MA">Massachusetts</option>
+                                                <option value="MI">Michigan</option>
+                                                <option value="MN">Minnesota</option>
+                                                <option value="MS">Mississippi</option>
+                                                <option value="MO">Missouri</option>
+                                                <option value="MT">Montana</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="NH">New Hampshire</option>
+                                                <option value="NJ">New Jersey</option>
+                                                <option value="NM">New Mexico</option>
+                                                <option value="NY">New York</option>
+                                                <option value="NC">North Carolina</option>
+                                                <option value="ND">North Dakota</option>
+                                                <option value="OH">Ohio</option>
+                                                <option value="OK">Oklahoma</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="RI">Rhode Island</option>
+                                                <option value="SC">South Carolina</option>
+                                                <option value="SD">South Dakota</option>
+                                                <option value="TN">Tennessee</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="UT">Utah</option>
+                                                <option value="VT">Vermont</option>
+                                                <option value="VA">Virginia</option>
+                                                <option value="WA">Washington</option>
+                                                <option value="WV">West Virginia</option>
+                                                <option value="WI">Wisconsin</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="six wide column">
+                                        <div type="text" class="date-range" id="search-date">
+                                            <div class="departure-section">
+                                                <div class="date"></div>
+                                                <div class="day"></div>
+                                                <input class="date-from" type="hidden" name="dateFrom" value="">
+                                            </div>
+                                            <div class="arrival-section">
+                                                <div class="date"></div>
+                                                <div class="day"></div>
+                                                <input class="date-to" type="hidden" name="dateTo" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div type="text" id="search-passengers">
+                                            <i class="users icon"></i>
+                                            <div class="contents">
+                                                <div class="passengers-value">
+                                                    <span class="adult-count">1</span> بزرگسال<span> - </span><span class="child-count">0</span> کودک
+                                                </div>
+                                                <div class="room-value"><span class="room-count">1</span> اتاق</div>
+
+                                                <input class="adult-count-input" type="hidden" name="adult" value="1">
+                                                <input class="child-count-input" type="hidden" name="child" value="0">
+                                                <input class="room-count-input" type="hidden" name="room" value="1">
+                                            </div>
+                                        </div>
+                                        <div class="ui passenger popup transition hidden">
+                                            <div class="passenger-content">
+                                                <div class="ui three column centered grid parent-section">
+                                                    <div class="column">
+                                                        <div class="mini ui blue icon button add-btn">
+                                                            <i class="plus icon"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="column">
+                                                        <h3 class="label"><span class="room-count">1</span> اتاق </h3>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="mini ui icon button minus-btn">
+                                                            <i class="minus icon"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ui divider"></div>
+
+                                                <div class="ui three column centered grid parent-section">
+                                                    <div class="column">
+                                                        <div class="mini ui blue icon button add-btn">
+                                                            <i class="plus icon"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="column">
+                                                        <h3 class="label"><span class="adult-count">1</span> بزرگسال </h3>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="mini ui icon button minus-btn">
+                                                            <i class="minus icon"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ui divider"></div>
+
+                                                <div class="ui three column centered grid parent-section">
+                                                    <div class="column">
+                                                        <div class="mini ui blue icon button add-btn">
+                                                            <i class="plus icon"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="column">
+                                                        <h3 class="label"><span class="child-count">0</span> کودک </h3>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="mini ui icon button minus-btn">
+                                                            <i class="minus icon"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="two wide column">
+                                        <button type="submit" class="ui yellow button fluid search-submit">جستجو</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</searchBlock>-->
+
+    <div id="all-hotels-section">
+        <div class="ui container">
+            <div class="ui stackable two column centered grid">
+
+                <!--<hotelFilters> فیلترهای مخصوص هتل -->
+                <div class="four wide column">
+                    <div class="ui sticky filters-section m-shadowed">
+                        <div class="header gray-bg">
+                            <h3>فیلترها</h3>
+                            <a href="#">حذف فیلترها</a>
+                        </div>
+
+                        <div class="body">
+                            <div class="ui two column centered grid m0">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>میهمان خارجی</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>هتل‌های آنلاین</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="ui dividing header">قیمت</h3>
+                            <div>
+                                <div id="slider-range"></div>
+                                <input class="slider-range-input" type="text" id="amount" readonly>
+                            </div>
+
+                            <h3 class="ui dividing header">نوع مکان اقامتی</h3>
+                            <div class="ui two column centered grid m0">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>هتل</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>هتل آپارتمان</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui two column centered grid m0 mt20">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>متل</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>مهمانسرا</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="ui dividing header">امکانات</h3>
+                            <div class="ui two column centered grid m0">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>اینترنت وایرلس</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>پارکینگ</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui two column centered grid m0 mt20">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>مجموعه ورزشی</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>بیلیارد</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui two column centered grid m0 mt20">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>سونا</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>خشک شویی</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui two column centered grid m0 mt20">
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>سرویس فرودگاه</label>
+                                    </div>
+                                </div>
+                                <div class="column p0">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" tabindex="0" class="hidden">
+                                        <label>غذاهای دریایی</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<hotelFilters>-->
+
+                <!--<hotelCardsList> لیست هتل‌ها -->
+                <div id="hotel-cards" class="twelve wide column">
+                    <div class="sort-section m-shadowed">
+                        <strong>مرتب سازی بر اساس:</strong><a href="#">ستاره</a><a href="#">قیمت</a>
+                    </div>
+
+                    <div class="hotel-cards mt30">
+                        <div id="hotel-segments">
+
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="35.7663162" lng="51.4204603">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل هویزه تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۶۵۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="35.7663162" lng="51.4204603">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل هویزه تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۶۵۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="35.7663162" lng="51.4204603">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل هویزه تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۶۵۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="35.7663162" lng="51.4204603">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل هویزه تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۶۵۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="35.7663162" lng="51.4204603">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل هویزه تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۶۵۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="35.7663162" lng="51.4204603">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل هویزه تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۶۵۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="33.6095725" lng="56.9281482">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel02.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل استقلال تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="2" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price">۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۴۰۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="36.26232802173708" lng="59.61829985239251">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel01.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل ارم تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="3" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۷۸۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui segment hotel-card google-map-elements" type="hotel" lat="36.4284211" lng="55.0931992">
+                            <div class="ui stackable three column centered grid m-shadowed">
+                                <div class="four wide column p0 image" style="background-image: url('app/images/hotel03.png')">
+                                    <span class="ui yellow ribbon label">تا ۵۰٪ تخفیف</span>
+                                </div>
+                                <div class="eight wide column information">
+                                    <div class="name"><h2 class="header">هتل پارسیان آزادی تهران</h2> <span class="tiny ui green label ml20">آنلاین</span></div>
+                                    <div class="ui star rating" data-rating="3" data-max-rating="5"></div>
+                                    <div class="description">هتل آپارتمان وزرا، هتل آپارتمانی سه ستاره که شامل ۲۵ واحد آپا ...</div>
+                                    <div class="address">تهران، خیابان انقلاب، مابین دروازه دولت و دروازه شمیران، ابتدای خیابان بهار جنوبی، پلاک ۵، هتل بهار</div>
+                                </div>
+                                <div class="four wide column price p0">
+                                    <h2 class="header">قیمت برای یک شب</h2>
+                                    <div class="old-price"> ۷۶۰.۰۰۰ تومان</div>
+                                    <div class="new-price">از ۷۸۰.۰۰۰ تومان</div>
+                                    <div class="description">پیشنهاد ترکیب اتاق : سوئیت استودیو: ۱ عدد</div>
+                                    <button class="ui fluid primary button m-styled">بررسی رزرو</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mini ui pagination menu right floated">
+                            <a class="item previous-page"><span></span></a>
+                            <a class="active item"><span>1</span></a>
+                            <div class="disabled item"><span>...</span></div>
+                            <a class="item"><span>10</span></a>
+                            <a class="item"><span>11</span></a>
+                            <a class="item"><span>12</span></a>
+                            <a class="item next-page"><span></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!--</hotelCardsList>-->
+            </div>
+        </div>
+    </div>
+
+    <!--<hotelSlider>-->
+    <div id="hotels-section" class="mt100">
+        <div class="hotels-slider">
+            <div class="hotel-slide">
+                <img src="app/images/hotel01.png">
+                <div class="hotel-content">
+                    <p>تهران</p>
+                    <span>پایتخت ایران</span>
+                </div>
+            </div>
+
+            <div class="hotel-slide">
+                <img src="app/images/hotel02.png">
+                <div class="hotel-content">
+                    <p>تبریز</p>
+                    <span>پایتخت فرهنگی جهان اسلام</span>
+                </div>
+            </div>
+
+            <div class="hotel-slide">
+                <img src="app/images/hotel03.png">
+                <div class="hotel-content">
+                    <p>شیراز</p>
+                    <span>تاریخ و تمدن ایران</span>
+                </div>
+            </div>
+
+            <div class="hotel-slide">
+                <img src="app/images/hotel01.png">
+                <div class="hotel-content">
+                    <p>تهران</p>
+                    <span>پایتخت ایران</span>
+                </div>
+            </div>
+
+            <div class="hotel-slide">
+                <img src="app/images/hotel02.png">
+                <div class="hotel-content">
+                    <p>تبریز</p>
+                    <span>پایتخت فرهنگی جهان اسلام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</hotelSlider>-->
+
+    <!--<information> اطلاعات زیر قسمت اسلایدر هال‌هل -->
+    <div class="information-block mtb50">
+        <div class="ui container">
+            <div class="header-section">
+                <h2 class="header">درباره تهران</h2>
+                <h2 class="description">تهران، پایتخت ایران</h2>
+            </div>
+            <div class="passage">
+                هتل بزرگ پنج ستاره داریوش با سرمایه گذاری جناب آقای حسین ثابت و الهام از معماری باستانی تخت جمشید در زمینى به وسعت ۱۲۱۳۳۰ متر مربع در شمال شرق جزیره زیباى کیش نزديك به ساحل شرقی ساخته شده، این هتل یادآور معماری خاص و بی بدیل ایران باستان بوده با فضای مجذوب کننده و غرور آفرین دوران پادشاهی هخامنشی اقامتی خاطره انگیز و به یادماندنی را برای مسافران عزیز رقم خواهد زد. هتل دارای فضاهای گردشی، ورزشی و مدرن بی نظیری ست که چشم هر بیننده ای را مسحور میکند، چشم انداز هتل داریوش به آبهای نیلگون خلیج همیشه فارس خاطره ای به یادماندنی را در ذهن شما بر جای خواهد گذاشت.
+            </div>
+            <button class="ui button">ادامه مطلب</button>
+        </div>
+    </div>
+    <!--</information>-->
+
+    <!--<hotelLocation>-->
+    <div id="google-map-section">
+        <div class="header-section">
+            <h2 class="header">هتل های تهران روی نقشه</h2>
+            <h2 class="description">تهران، پایتخت ایران</h2>
+        </div>
+
+        <div id="google-map" style="height: 500px; background-color: #eeeeee;"></div>
+    </div>
+    <!--</hotelLocation>-->
+</div>
+
+<footer id="footer">
+
+    <!--<addressPhone>-->
+    <div class="footer-top">
+        <div class=" ui container">
+            <div class="ui stackable two column grid">
+                <div class="column left floated">
+                    <p>تهران، خیابان بهشتی، خیابان خالد استامبولی، کوچه ۲۳، پلاک ۷ | کدپستی ۱۲۳۴۵۶۷۸۹۰</p>
+                </div>
+                <div class="column right floated">
+                    <p>تلفن: ۴۳۴۵۶ | ۳۴۵۷۳۲۶۷</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</addressPhone>-->
+
+    <!--<subscribe&social>-->
+    <div class="footer-middle">
+        <div class="ui container">
+            <div class="ui stackable two column grid">
+                <div class="column subscribe-section">
+                    <h2 class="header">
+                        عضویت در خبرنامه ایمیلی:
+                    </h2>
+                    <div class="ui fluid action input">
+                        <input type="text" placeholder="پست الکترونیکی خود را وارد کنید...">
+                        <button class="ui yellow button">عضویت</button>
+                    </div>
+                    <p class="description">برای عضویت در خبرنامه پیامکی، عدد ۵ را به شماره ۴۶۷۳۳۵۶ پیامک کنید</p>
+                </div>
+                <div class="column social-section">
+                    <ul>
+                        <li class="linkedin">
+                            <a href="#">
+                                <img src="app/images/socialLinkedin.png">
+                            </a>
+                        </li>
+                        <li class="google-plus">
+                            <a href="#">
+                                <img src="app/images/socialGooglePlus.png">
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="#">
+                                <img src="app/images/socialTwitter.png">
+                            </a>
+                        </li>
+                        <li class="instagram">
+                            <a href="#">
+                                <img src="app/images/socialInstagram.png">
+                            </a>
+                        </li>
+                        <li class="facebook">
+                            <a href="#">
+                                <img src="app/images/socialFacebook.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</subscribe&social>-->
+
+    <!--<description&links>-->
+    <div class="footer-bottom">
+        <div class="ui container">
+            <div class="ui stackable two column centered grid">
+                <div class="column">
+                    <p>
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در زبان فارسی ایجادنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="ui three column centered grid">
+                        <div class="column">
+                            <h2 class="header">عنوان ۱</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2 class="header">عنوان ۲</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2 class="header">عنوان ۳</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</description&links>-->
+
+    <!--<copyright>-->
+    <div class="copyright">
+        <div class="ui container">
+            <p>تمامی حقوق مادی و معنوی این سایت متعلق به شرکت <a href="#">سراج</a> می باشد.</p>
+        </div>
+    </div>
+    <!--</copyright>-->
+</footer>
+
+</body>
+</html>

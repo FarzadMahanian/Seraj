@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fa">
+<head>
+    <!--<metaTags>-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>هتل | سامانه رزرواسیون سراج</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--</metaTags>-->
+
+    <!--<stylesheer>-->
+    <link rel="icon" href="app/images/logo.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="app/assets/css/bootstrap-rtl.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/persian-bootstrap-daterangepicker/daterangepicker.css">
+    <link type="text/css" rel="stylesheet" href="semantic/dist/semantic.rtl.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/jquery-ui/themes/base/all.css">
+    <link type="text/css" rel="stylesheet" href="app/css/styles-rtl.css">
+    <!--</stylesheer>-->
+
+    <!--<javascript>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsT0LEBibZ1Svifpe_vzbRNDIvOO7PIlk&language=fa&libraries=places"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widget.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/mouse.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/slider.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="node_modules/moment-jalaali/build/moment-jalaali.js"></script>
+    <script type="text/javascript" src="node_modules/persian-bootstrap-daterangepicker/daterangepicker-persian.js"></script>
+    <script type="text/javascript" src="node_modules/numeral/min/numeral.min.js"></script>
+    <script type="text/javascript" src="semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script type="text/javascript" src="app/js/main.js"></script>
+    <!--</javascript>-->
+</head>
+<body>
+<div id="site-header" style="background-image: url('app/images/headerColorBG.png'), url('app/images/hotelHeaderBG.png')">
+
+    <!--<topMenu>-->
+    <header class="ui container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="app/images/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">رزرو هتل <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">بلیط هواپیما</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">همکاران تجاری</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">قوانین و مقررات رزرو</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">راهنمای سایت</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning btn-sm follow-up" href="#">پیگیری رزرو</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav float-md-right">
+                    <!--<li class="nav-item active">-->
+                    <!--<div class="dropdown">-->
+                    <!--<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="language-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+
+                    <!--</button>-->
+                    <!--<div class="dropdown-menu" aria-labelledby="language-switcher">-->
+                    <!--<a class="dropdown-item" href="#">انگلیسی</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <li class="nav-item">
+                        <a class="nav-link login-register" href="#">ورود/ثبت نام</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-sm dropdown-toggle" type="button" id="currency-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>IRR</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="currency-switcher">
+                                <a class="dropdown-item" href="#">Dollar</a>
+                                <a class="dropdown-item" href="#">Euro</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--</topMenu>-->
+
+    <!--<pageTitle>-->
+    <div class="ui container page-title">
+        <div class="contents">
+            <h1 class="header">هتل داریوش کیش</h1>
+            <h2 class="description">كيش، میدان داریوش</h2>
+            <div class="tags">
+                <div class="title">تخفیف تا</div>
+                <div class="value">٪۶۵</div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="#" class="socials">اشتراک در شبکه های اجتماعی</a>
+            <a href="#" class="favorite">اضافه به لیست علاقه مندی ها</a>
+        </div>
+
+        <div class="middle-link">
+            <a href="#" class="ui massive primary button m-styled">لیست هتل‌های <strong>کیش</strong></a>
+        </div>
+    </div>
+    <!--</pageTitle>-->
+</div>
+
+<div id="main-content" style="background-color: #ffffff">
+    <div id="hotel-section">
+
+        <!--<hotelInformation>-->
+        <div class="summary pt100 pb50 mb30">
+            <div class="ui container info-gallery">
+                <div class="ui stackable two column centered grid m-shadowed">
+                    <div class="column info">
+                        <div class="ui doubling four column centered grid">
+                            <div class="column">
+                                <div class="contents">
+                                    <img src="app/images/hotelFloors.png">
+                                    <div class="header">تعداد طبقه</div>
+                                    <div class="description">5</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="contents">
+                                    <img src="app/images/hotelRooms.png">
+                                    <div class="header">تعداد اتاق</div>
+                                    <div class="description">190</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="contents">
+                                    <img src="app/images/hotelExit.png">
+                                    <div class="header">ساعت خروج</div>
+                                    <div class="description">17:00</div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="contents">
+                                    <img src="app/images/hotelEnter.png">
+                                    <div class="header">تعداد طبقه</div>
+                                    <div class="description">11:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column gallery">
+                        <div class="ui four column centered grid m0">
+                            <div class="column">
+                                <div class="image">
+                                    <img src="app/images/hotelGallery01.png">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="image">
+                                    <img src="app/images/hotelGallery02.png">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="image">
+                                    <img src="app/images/hotelGallery03.png">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="image">
+                                    <span>تصاویر بیشتر</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-block ui container mt70 plr0 pb30">
+                <div class="ui stackable two column centered grid">
+                    <div class="eight wide column">
+                        <img src="app/images/hotelSummary.png" class="m-shadowed">
+                    </div>
+                    <div class="eight wide column">
+                        <p>
+                            هتل بزرگ پنج ستاره داریوش با سرمایه گذاری جناب آقای حسین ثابت و الهام از معماری باستانی تخت جمشید در زمینى به وسعت ۱۲۱۳۳۰ متر مربع در شمال شرق جزیره زیباى کیش نزديك به ساحل شرقی ساخته شده، این هتل یادآور معماری خاص و بی بدیل ایران باستان بوده با فضای مجذوب کننده و غرور آفرین دوران پادشاهی هخامنشی اقامتی خاطره انگیز و به یادماندنی را برای مسافران عزیز رقم خواهد زد. هتل دارای فضاهای گردشی، ورزشی و مدرن بی نظیری ست که چشم هر بیننده ای را مسحور میکند، چشم انداز هتل داریوش به آبهای نیلگون خلیج همیشه فارس خاطره ای به یادماندنی را در ذهن شما بر جای خواهد گذاشت.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--</hotelInformation>-->
+
+
+        <div class="hotel-reservation">
+
+            <!--hotelName-->
+            <div class="header-section">
+                <h2 class="header">رزرو هتل</h2>
+                <h2 class="description">رزرو اتاق در هتل داریوش کیش</h2>
+            </div>
+            <!--/hotelName-->
+
+            <!--setDate-->
+            <div id="search-section">
+                <div id="search-box" class="ui container">
+                    <div class="ui stackable three column centered grid m0">
+                        <div class="six wide column">
+                            <div type="text" class="date-range" id="search-date">
+                                <div class="departure-section">
+                                    <div class="date"></div>
+                                    <div class="day"></div>
+                                    <input class="date-from" type="hidden" name="dateFrom" value="">
+                                </div>
+                                <div class="arrival-section">
+                                    <div class="date"></div>
+                                    <div class="day"></div>
+                                    <input class="date-to" type="hidden" name="dateTo" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/setDate-->
+
+            <!--<hotelRooms>-->
+            <div class="reservation-rows mt30 pb30">
+                <div class="ui containe">
+                    <div class="ui stackable two column centered grid">
+                        <div class="four wide column mt30">
+                            <div class="ui sticky reservation-sticky mb50">
+                                <div id="calculated-rooms" class="ui blue segment">
+                                    <div class="ui header m0">
+                                        <h3 class="m0">لیست رزروها</h3>
+
+                                        <div class="ui animated primary button" tabindex="0">
+                                            <div class="visible content">
+                                                <div class="price">
+                                                    <span class="value sep-price"> ۰ </span><span> ریال </span>
+                                                </div>
+                                            </div>
+                                            <div class="hidden content">پرداخت</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="contents">
+                                        <div class="ui divider"></div>
+                                        <div class="empty">
+                                            <div class="ui warning message">
+                                                <div class="image">
+                                                    <img src="app/images/empty.svg">
+                                                </div>
+                                                <div class="header mb10">
+                                                    اتاقی برای رزرو انتخاب نشده است
+                                                </div>
+                                                لطفا اتاق یا اتاق‌های مورد نظر خود را انتغاب نمایید
+                                            </div>
+                                        </div>
+                                        <div class="not-empty">
+                                            <table class="ui very basic small striped table">
+                                                <tbody>
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr class="positive">
+                                                        <th>جمع کل</th>
+                                                        <th class="total-amount"></th>
+                                                        <th class="total-price right aligned sep-price"></th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nine wide column">
+                            <div class="ui segments mtb30 m-shadowed">
+                                <div class="ui secondary segment">
+                                    <p>سوئیت یک خوابه سه تخته براق</p>
+                                </div>
+                                <div class="ui segment">
+                                    <div class="ui stackable five column grid">
+                                        <div class="four wide column image">
+                                            <img src="app/images/hotelRoom01.jpg" class="m-radius">
+                                        </div>
+                                        <div class="three wide column details">
+                                            <div class="persons item">
+                                                <img src="app/images/hotelPersons.png">
+                                                <div><span>۲</span> نفر</div>
+                                            </div>
+                                            <div class="breakfast item">
+                                                <img src="app/images/hotelBreakfast.png">
+                                                <div>صبحانه</div>
+                                            </div>
+                                            <div class="bed item">
+                                                <img src="app/images/hotelBed.png">
+                                                <div>تخت اضافه</div>
+                                            </div>
+                                        </div>
+                                        <div class="three wide column facility">
+                                            <div class="header">امکانات:</div>
+                                            <ul class="mt30">
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                            </ul>
+                                        </div>
+                                        <div class="three wide column price">
+                                            <div class="header">قیمت برای یک شب:</div>
+                                            <div class="old-price mt30">۱۳,۲۳۰,۰۰۰ ریال</div>
+                                            <div class="new-price mt15">۱۰,۵۰۰,۰۰۰ ریال</div>
+                                        </div>
+                                        <div class="three wide column rooms hotel-rooms-select">
+                                            <div class="header">تعداد اتاق:</div>
+                                            <div class="ui center aligned basic segment mt70">
+                                                <div class="ui buttons" room-id="21">
+                                                    <button class="ui button add-btn" onclick="calculateRooms(this)"><i class="plus icon m0"></i></button>
+                                                    <div class="or rooms-value" data-text="0"></div>
+                                                    <button class="ui button minus-btn" onclick="calculateRooms(this)"><i class="minus icon m0"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui segments mtb30 m-shadowed">
+                                <div class="ui secondary segment">
+                                    <p>سوئیت یک خوابه سه تخته براق</p>
+                                </div>
+                                <div class="ui segment">
+                                    <div class="ui stackable five column grid">
+                                        <div class="four wide column image">
+                                            <img src="app/images/hotelRoom02.jpg" class="m-radius">
+                                        </div>
+                                        <div class="three wide column details">
+                                            <div class="persons item">
+                                                <img src="app/images/hotelPersons.png">
+                                                <div><span>۲</span> نفر</div>
+                                            </div>
+                                            <div class="breakfast item">
+                                                <img src="app/images/hotelBreakfast.png">
+                                                <div>صبحانه</div>
+                                            </div>
+                                            <div class="bed item">
+                                                <img src="app/images/hotelBed.png">
+                                                <div>تخت اضافه</div>
+                                            </div>
+                                        </div>
+                                        <div class="three wide column facility">
+                                            <div class="header">امکانات:</div>
+                                            <ul class="mt30">
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                            </ul>
+                                        </div>
+                                        <div class="three wide column price">
+                                            <div class="header">قیمت برای یک شب:</div>
+                                            <div class="old-price mt30">۱۳,۲۳۰,۰۰۰ ریال</div>
+                                            <div class="new-price mt15">۱۰,۵۰۰,۰۰۰ ریال</div>
+                                        </div>
+                                        <div class="three wide column rooms hotel-rooms-select">
+                                            <div class="header">تعداد اتاق:</div>
+                                            <div class="ui center aligned basic segment mt70">
+                                                <div class="ui buttons" room-id="22">
+                                                    <button class="ui button add-btn" onclick="calculateRooms(this)"><i class="plus icon m0"></i></button>
+                                                    <div class="or rooms-value" data-text="0"></div>
+                                                    <button class="ui button minus-btn" onclick="calculateRooms(this)"><i class="minus icon m0"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui segments mtb30 m-shadowed">
+                                <div class="ui secondary segment">
+                                    <p>سوئیت یک خوابه سه تخته براق</p>
+                                </div>
+                                <div class="ui segment">
+                                    <div class="ui stackable five column grid">
+                                        <div class="four wide column image">
+                                            <img src="app/images/hotelRoom03.jpg" class="m-radius">
+                                        </div>
+                                        <div class="three wide column details">
+                                            <div class="persons item">
+                                                <img src="app/images/hotelPersons.png">
+                                                <div><span>۲</span> نفر</div>
+                                            </div>
+                                            <div class="breakfast item">
+                                                <img src="app/images/hotelBreakfast.png">
+                                                <div>صبحانه</div>
+                                            </div>
+                                            <div class="bed item">
+                                                <img src="app/images/hotelBed.png">
+                                                <div>تخت اضافه</div>
+                                            </div>
+                                        </div>
+                                        <div class="three wide column facility">
+                                            <div class="header">امکانات:</div>
+                                            <ul class="mt30">
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                            </ul>
+                                        </div>
+                                        <div class="three wide column price">
+                                            <div class="header">قیمت برای یک شب:</div>
+                                            <div class="old-price mt30">۱۳,۲۳۰,۰۰۰ ریال</div>
+                                            <div class="new-price mt15">۱۰,۵۰۰,۰۰۰ ریال</div>
+                                        </div>
+                                        <div class="three wide column rooms hotel-rooms-select">
+                                            <div class="header">تعداد اتاق:</div>
+                                            <div class="ui center aligned basic segment mt70">
+                                                <div class="ui buttons" room-id="23">
+                                                    <button class="ui button add-btn" onclick="calculateRooms(this)"><i class="plus icon m0"></i></button>
+                                                    <div class="or rooms-value" data-text="0"></div>
+                                                    <button class="ui button minus-btn" onclick="calculateRooms(this)"><i class="minus icon m0"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui segments mtb30 m-shadowed">
+                                <div class="ui secondary segment">
+                                    <p>سوئیت یک خوابه سه تخته براق</p>
+                                </div>
+                                <div class="ui segment">
+                                    <div class="ui stackable five column grid">
+                                        <div class="four wide column image">
+                                            <img src="app/images/hotelRoom04.jpg" class="m-radius">
+                                        </div>
+                                        <div class="three wide column details">
+                                            <div class="persons item">
+                                                <img src="app/images/hotelPersons.png">
+                                                <div><span>۲</span> نفر</div>
+                                            </div>
+                                            <div class="breakfast item">
+                                                <img src="app/images/hotelBreakfast.png">
+                                                <div>صبحانه</div>
+                                            </div>
+                                            <div class="bed item">
+                                                <img src="app/images/hotelBed.png">
+                                                <div>تخت اضافه</div>
+                                            </div>
+                                        </div>
+                                        <div class="three wide column facility">
+                                            <div class="header">امکانات:</div>
+                                            <ul class="mt30">
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                                <li class="cooler">کولر گازی</li>
+                                                <li class="tea">چای ساز</li>
+                                            </ul>
+                                        </div>
+                                        <div class="three wide column price">
+                                            <div class="header">قیمت برای یک شب:</div>
+                                            <div class="old-price mt30">۱۳,۲۳۰,۰۰۰ ریال</div>
+                                            <div class="new-price mt15">۱۰,۵۰۰,۰۰۰ ریال</div>
+                                        </div>
+                                        <div class="three wide column rooms hotel-rooms-select">
+                                            <div class="header">تعداد اتاق:</div>
+                                            <div class="ui center aligned basic segment mt70">
+                                                <div class="ui buttons" room-id="24">
+                                                    <button class="ui button add-btn" onclick="calculateRooms(this)"><i class="plus icon m0"></i></button>
+                                                    <div class="or rooms-value" data-text="0"></div>
+                                                    <button class="ui button minus-btn" onclick="calculateRooms(this)"><i class="minus icon m0"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--</hotelRooms>-->
+        </div>
+
+        <!--<hotelFacilities>-->
+        <div class="all-facilities blue-bg pt50">
+            <div class="ui container">
+                <div class="header-section">
+                    <h2 class="header">امکانات هتل</h2>
+                    <h2 class="description">رزرو اتاق در هتل داریوش کیش</h2>
+                </div>
+
+                <div class="top-section ptb15 plr30">
+                    <ul>
+                        <li class="title mr70">محبوب ترین امکانات هتل</li>
+                        <li class="item mr30"><img class="mr5" src="app/images/hotelWIFI.png">وای فای رایگان</li>
+                        <li class="item mr30"><img class="mr5" src="app/images/hotelSpa.png">سالن اسپا</li>
+                        <li class="item mr30"><img class="mr5" src="app/images/hotelFreeParking.png">پارکینگ رایگان</li>
+                        <li class="item mr30"><img class="mr5" src="app/images/hotelBreakfasts.png">صبحانه</li>
+                    </ul>
+                </div>
+
+                <div class="bottom-section mt50">
+                    <div class="ui stackable doubling four column centered grid">
+                        <div class="column">
+                            <ul style="background-image: url('app/images/hotelShower.png')">
+                                <li class="title">حمام</li>
+                                <li class="item">حمام خصوصی</li>
+                                <li class="item">دمپایی</li>
+                                <li class="item">سرویس بهداشتی</li>
+                                <li class="item">لوازم بهداشتی رایگان</li>
+                                <li class="item">سشوار</li>
+                                <li class="item">دوش</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul style="background-image: url('app/images/hotelFood.png')">
+                                <li class="title">غذا و نوشیدنی</li>
+                                <li class="item">رستوران به همراه منوی ناهارخوری</li>
+                                <li class="item">مینی بار</li>
+                            </ul>
+                            <ul style="background-image: url('app/images/hotelWIFI.png')">
+                                <li class="title">اینترنت</li>
+                                <li class="item">وای فای رایگان داخل اتاق ها و محوطه</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul style="background-image: url('app/images/hotelBriefcase.png')">
+                                <li class="title">امکانات تجاری</li>
+                                <li class="item">فکس و فتوکپی</li>
+                                <li class="item">امکان برگزاری جلسات</li>
+                                <li class="item">مرکز تجاری</li>
+                                <li class="item">کافی نت</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul style="background-image: url('app/images/hotelPublicFacilities.png')">
+                                <li class="title">امکانات عمومی</li>
+                                <li class="item">شاتل فرودگاه</li>
+                                <li class="item">تهویه مطبوع</li>
+                                <li class="item">تاکسی</li>
+                                <li class="item">آسانسور</li>
+                                <li class="item">سوئیت ماه عسل</li>
+                                <li class="item">اتاق خانوادگی</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--</hotelFacilities>-->
+
+        <!--<hotelDistances>-->
+        <div class="hotel-distances">
+            <div class="ui container custom-section">
+                <div class="header-section">
+                    <h2 class="header">فاصله هتل تا مکان های مهم</h2>
+                    <h2 class="description">رزرو اتاق در هتل داریوش کیش</h2>
+                </div>
+
+                <div class="ui stackable two column grid">
+                    <div class="column map">
+                        <div id="google-map-empty"></div>
+                    </div>
+                    <div class="column distances">
+                        <div class="ui three column centered grid">
+                            <div class="column">
+                                <img src="app/images/distanceCar.png">
+                                <div class="title">اجاره ماشین</div>
+                                <div class="value">۱ کیلومتر</div>
+                            </div>
+                            <div class="column">
+                                <img src="app/images/distanceParking.png">
+                                <div class="title">پارکینگ</div>
+                                <div class="value">۴۰۰ متر</div>
+                            </div>
+                            <div class="column">
+                                <img src="app/images/distanceAirport.png">
+                                <div class="title">ترانفسفر فرودگاه</div>
+                                <div class="value">۱۰۰ متر</div>
+                            </div>
+                        </div>
+
+                        <div class="ui three column centered grid mt50">
+                            <div class="column">
+                                <img src="app/images/distanceCar.png">
+                                <div class="title">اجاره ماشین</div>
+                                <div class="value">۱ کیلومتر</div>
+                            </div>
+                            <div class="column">
+                                <img src="app/images/distanceParking.png">
+                                <div class="title">پارکینگ</div>
+                                <div class="value">۴۰۰ متر</div>
+                            </div>
+                            <div class="column">
+                                <img src="app/images/distanceAirport.png">
+                                <div class="title">ترانفسفر فرودگاه</div>
+                                <div class="value">۱۰۰ متر</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--</hotelDistances>-->
+    </div>
+
+    <!--<addComment>-->
+    <div class="gray-bg pt50 pb100">
+        <div class="ui container">
+            <div class="header-section">
+                <h2 class="header">دیدگاه خود را بیان کنید</h2>
+                <h2 class="description">رزرو اتاق در هتل داریوش کیش</h2>
+            </div>
+
+            <div id="hotel-vote-section" class="m-shadowed m-radius p30">
+                <h3>امتیاز شما به این هتل: </h3>
+                <div class="ui stackable three column grid">
+                    <div class="column">
+                        <div class="mb10">
+                            <label>امکانات هتل: </label>
+                            <input type="text" class="vote-amount" readonly>
+                        </div>
+                        <div class="hotel-vote-slider"></div>
+                    </div>
+                    <div class="column">
+                        <div class="mb10">
+                            <label>قیمت: </label>
+                            <input type="text" class="vote-amount" readonly>
+                        </div>
+                        <div class="hotel-vote-slider"></div>
+                    </div>
+                    <div class="column">
+                        <div class="mb10">
+                            <label>کیفیت اتاق ها: </label>
+                            <input type="text" class="vote-amount" readonly>
+                        </div>
+                        <div class="hotel-vote-slider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui equal width form mb30 grouped-inputs">
+                <div class="fields">
+                    <div class="field">
+                        <label for="commentName">نام</label>
+                        <input id="commentName" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="commentEmail">ایمیل (اجباری)</label>
+                        <input id="commentEmail" type="email">
+                    </div>
+                    <div class="field">
+                        <label for="commentWebsite">وب سایت</label>
+                        <input id="commentWebsite" type="text">
+                    </div>
+                </div>
+                <div class="field">
+                    <textarea rows="7" placeholder="دیدگاه خود را اینجا بنویسید..."></textarea>
+                </div>
+
+                <button class="ui large right floated primary button m-styled m-wide-btn-150" type="submit">ثبت نظر</button>
+            </div>
+        </div>
+    </div>
+    <!--</addComment>-->
+</div>
+
+<footer id="footer">
+
+    <!--<addressPhone>-->
+    <div class="footer-top">
+        <div class=" ui container">
+            <div class="ui stackable two column grid">
+                <div class="column left floated">
+                    <p>تهران، خیابان بهشتی، خیابان خالد استامبولی، کوچه ۲۳، پلاک ۷ | کدپستی ۱۲۳۴۵۶۷۸۹۰</p>
+                </div>
+                <div class="column right floated">
+                    <p>تلفن: ۴۳۴۵۶ | ۳۴۵۷۳۲۶۷</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</addressPhone>-->
+
+    <!--<subscribe&social>-->
+    <div class="footer-middle">
+        <div class="ui container">
+            <div class="ui stackable two column grid">
+                <div class="column subscribe-section">
+                    <h2 class="header">
+                        عضویت در خبرنامه ایمیلی:
+                    </h2>
+                    <div class="ui fluid action input">
+                        <input type="text" placeholder="پست الکترونیکی خود را وارد کنید...">
+                        <button class="ui yellow button">عضویت</button>
+                    </div>
+                    <p class="description">برای عضویت در خبرنامه پیامکی، عدد ۵ را به شماره ۴۶۷۳۳۵۶ پیامک کنید</p>
+                </div>
+                <div class="column social-section">
+                    <ul>
+                        <li class="linkedin">
+                            <a href="#">
+                                <img src="app/images/socialLinkedin.png">
+                            </a>
+                        </li>
+                        <li class="google-plus">
+                            <a href="#">
+                                <img src="app/images/socialGooglePlus.png">
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="#">
+                                <img src="app/images/socialTwitter.png">
+                            </a>
+                        </li>
+                        <li class="instagram">
+                            <a href="#">
+                                <img src="app/images/socialInstagram.png">
+                            </a>
+                        </li>
+                        <li class="facebook">
+                            <a href="#">
+                                <img src="app/images/socialFacebook.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</subscribe&social>-->
+
+    <!--<description&links>-->
+    <div class="footer-bottom">
+        <div class="ui container">
+            <div class="ui stackable two column centered grid">
+                <div class="column">
+                    <p>
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در زبان فارسی ایجادنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="ui three column centered grid">
+                        <div class="column">
+                            <h2 class="header">عنوان ۱</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2 class="header">عنوان ۲</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2 class="header">عنوان ۳</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</description&links>-->
+
+    <!--<copyright>-->
+    <div class="copyright">
+        <div class="ui container">
+            <p>تمامی حقوق مادی و معنوی این سایت متعلق به شرکت <a href="#">سراج</a> می باشد.</p>
+        </div>
+    </div>
+    <!--</copyright>-->
+</footer>
+
+<script type="text/javascript">
+    var calculatedRooms = [];
+    var rooms = [
+        {
+            id: 21,
+            name: 'اتاق ۲۱',
+            price: 120000
+        },
+        {
+            id: 22,
+            name: 'اتاق ۲۲',
+            price: 300000
+        },
+        {
+            id: 23,
+            name: 'اتاق ۲۳',
+            price: 70000
+        },
+        {
+            id: 24,
+            name: 'اتاق ۲۴',
+            price: 250000
+        }
+    ];
+
+    function updateRoomPriceDom() {
+        if (calculatedRooms.length > 0) {
+            $('#calculated-rooms .empty').css('display', 'none');
+            $('#calculated-rooms .not-empty').css('display', 'block');
+            var totalAmount = 0;
+            var totalPrice = 0;
+            $('#calculated-rooms .not-empty table tbody').html('');
+            var meqdar = false;
+            $.each(calculatedRooms, function (index, value) {
+                if (value.amount > 0) {
+                    meqdar = true;
+                    var roomName = rooms.find(item => item.id === value.id).name;
+                    var roomAmount = calculatedRooms.find(item => item.id === value.id).amount;
+                    var roomPrice = rooms.find(item => item.id === value.id).price * calculatedRooms.find(item => item.id === value.id).amount;
+                    totalPrice += roomPrice;
+                    totalAmount += value.amount;
+                    $('#calculated-rooms .not-empty table tbody').append('<tr><td><strong class="room-name">'+ roomName +'</strong> × <strong class="room-amount">'+ roomAmount +'</strong></td><td></td><td class="right aligned"><strong class="room-price sep-price">'+ roomPrice +'</strong> ریال </td></tr>');
+                    correctPrices();
+                }
+            });
+            if (meqdar) {
+                $('#calculated-rooms .not-empty table tfoot .total-amount').html(totalAmount + ' اتاق ');
+                $('#calculated-rooms .not-empty table tfoot .total-price').html(totalPrice + ' ریال ');
+
+                $('#calculated-rooms .header .price .value').html('');
+                $('#calculated-rooms .not-empty .total').html('');
+                $('#calculated-rooms .header .price .value').html(totalPrice);
+                $('#calculated-rooms .not-empty .total').append('<h3>'+ totalPrice +'</h3>');
+
+                correctPrices();
+            } else {
+                $('#calculated-rooms .header .price .value').html('0');
+                $('#calculated-rooms .empty').css('display', 'block');
+                $('#calculated-rooms .not-empty').css('display', 'none');
+            }
+        } else {
+            $('#calculated-rooms .empty').css('display', 'block');
+            $('#calculated-rooms .not-empty').css('display', 'none');
+        }
+    }
+
+    function calculateRooms(element) {
+        setTimeout(function () {
+            var roomId = parseInt($(element).parent().attr('room-id'));
+            var currentPrice = parseInt($('#calculated-rooms').find('.price').html());
+            var roomAmount = parseInt($(element).parent().find('.rooms-value').attr('data-text'));
+
+            if (calculatedRooms.find(item => item.id === roomId)) {
+                if (roomAmount === 0) {
+
+                }
+                calculatedRooms.find(item => item.id === roomId).amount = roomAmount;
+                updateRoomPriceDom();
+            } else {
+                calculatedRooms.push({id: roomId, amount:roomAmount});
+                updateRoomPriceDom();
+            }
+
+            // $('#calculated-rooms').find('.price').html(currentPrice + rooms.find(item => item.id === roomId).price);
+        }, 100);
+    }
+
+    $(document).ready(function () {
+        updateRoomPriceDom();
+    });
+</script>
+
+</body>
+</html>

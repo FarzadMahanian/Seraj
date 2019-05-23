@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fa">
+<head>
+    <!--<metaTags>-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>مشخصات | سامانه رزرواسیون سراج</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--</metaTags>-->
+
+    <!--<stylesheer>-->
+    <link rel="icon" href="app/images/logo.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="app/assets/css/bootstrap-rtl.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/persian-bootstrap-daterangepicker/daterangepicker.css">
+    <link type="text/css" rel="stylesheet" href="semantic/dist/semantic.rtl.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/jquery-ui/themes/base/all.css">
+    <link type="text/css" rel="stylesheet" href="app/css/styles-rtl.css">
+    <!--</stylesheer>-->
+
+    <!--<javascript>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsT0LEBibZ1Svifpe_vzbRNDIvOO7PIlk&language=fa&libraries=places"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widget.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/mouse.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/slider.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="node_modules/moment-jalaali/build/moment-jalaali.js"></script>
+    <script type="text/javascript" src="node_modules/persian-bootstrap-daterangepicker/daterangepicker-persian.js"></script>
+    <script type="text/javascript" src="node_modules/numeral/min/numeral.min.js"></script>
+    <script type="text/javascript" src="semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script type="text/javascript" src="app/js/main.js"></script>
+    <!--</javascript>-->
+</head>
+<body>
+<div id="site-header" style="background-image: url('app/images/headerColorBG.png'), url('app/images/profileHeaderBG.png')">
+
+    <!--<topMenu>-->
+    <header class="ui container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="app/images/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/~farzad/seraj/hotels.html">رزرو هتل <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">بلیط هواپیما</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">همکاران تجاری</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">قوانین و مقررات رزرو</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">راهنمای سایت</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning btn-sm follow-up" href="#">پیگیری رزرو</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav float-md-right">
+                    <!--<li class="nav-item active">-->
+                    <!--<div class="dropdown">-->
+                    <!--<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="language-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+
+                    <!--</button>-->
+                    <!--<div class="dropdown-menu" aria-labelledby="language-switcher">-->
+                    <!--<a class="dropdown-item" href="#">انگلیسی</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <li class="nav-item">
+                        <a id="user-login-register" class="nav-link login-register" href="#">ورود/ثبت نام</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-sm dropdown-toggle" type="button" id="currency-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>IRR</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="currency-switcher">
+                                <a class="dropdown-item" href="#">Dollar</a>
+                                <a class="dropdown-item" href="#">Euro</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--</topMenu>-->
+
+    <!--<pageTitle>-->
+    <div class="ui container page-title">
+        <div class="contents">
+            <h1 class="header">حساب کاربری من</h1>
+            <h2 class="description">سلام! منصور عزیز</h2>
+        </div>
+    </div>
+    <!--</pageTitle>-->
+</div>
+
+<div id="main-content" style="background-color: #ffffff">
+    <div id="profile-section">
+        <div class="ui container ptb30">
+
+            <!--<differentTabs>-->
+            <div class="ui secondary menu tab-menu m-radius">
+                <a class="item active" data-tab="personal-info">مشخصات فردی</a>
+                <a class="item" data-tab="account-info">اطلاعات حساب بانکی</a>
+                <a class="item" data-tab="reservation-info">رزروهای من</a>
+                <a class="item" data-tab="transaction-info">تراکنش های من</a>
+            </div>
+            <!--</differentTabs>-->
+
+            <!--<personalInformation>-->
+            <div class="ui tab basic segment active" data-tab="personal-info">
+                <div class="header-section">
+                    <h2 class="header">مشخصات فردی</h2>
+                    <h2 class="description">مشخصات فردی خود را با دقت پر کنید</h2>
+                </div>
+
+                <div class="ui equal width form separated-inputs">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="userName">نام و نام خانوادگی</label>
+                            <input id="userName" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="userEmail">آدرس ایمیل</label>
+                            <input id="userEmail" type="email">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="field">
+                            <label for="userMobile">شماره موبایل</label>
+                            <input id="userMobile" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="userTell">تلفن ثابت (به همراه کد شهر)</label>
+                            <input id="userTell" type="text">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="field">
+                            <div class="ui fluid selection dropdown pt25 pb20 m-styled">
+                                <input type="hidden">
+                                <i class="chevron down icon"></i>
+                                <div class="default text">جنسیت</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">مذکر</div>
+                                    <div class="item" data-value="0">مونث</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="userBirthday">تاریخ تولد</label>
+                            <input id="userBirthday" class="date-single" type="text">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="field">
+                            <label for="userCity">شهر محل سکونت</label>
+                            <input id="userCity" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="userAddress">آدرس کامل</label>
+                            <input id="userAddress" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--</personalInformation>-->
+
+            <!--<accountInformation>-->
+            <div class="ui tab basic segment" data-tab="account-info">
+                <div class="header-section">
+                    <h2 class="header">اطلاعات حساب بانکی</h2>
+                    <h2 class="description">جهت بازرگشت مبلغ واریزی هنگام لغو رزرو</h2>
+                </div>
+
+                <div class="ui equal width form separated-inputs">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="userAccountName">نام حساب</label>
+                            <input id="userAccountName" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="userBankName">نام بانک</label>
+                            <input id="userBankName" type="text">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="field">
+                            <label for="userAccountNumber">شماره حساب</label>
+                            <input id="userAccountNumber" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="userCardNumber">شماره کارت</label>
+                            <input id="userCardNumber" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--</accountInformation>-->
+
+            <!--<reservationInformation>-->
+            <div class="ui tab basic segment" data-tab="reservation-info">
+                <div class="header-section">
+                    <h2 class="header">رزروهای من</h2>
+                    <h2 class="description">جهت بازرگشت مبلغ واریزی هنگام لغو رزرو</h2>
+                </div>
+
+                <table class="ui celled padded table m-shadowed m-radius">
+                    <thead>
+                        <tr>
+                            <th class="center aligned">ردیف</th>
+                            <th class="center aligned">نام هتل</th>
+                            <th class="center aligned">نوع اتاق</th>
+                            <th class="center aligned">تاریخ رزرو</th>
+                            <th class="center aligned">تاریخ ورود</th>
+                            <th class="center aligned">تعداد شب</th>
+                            <th class="center aligned">قیمت (تومان)</th>
+                            <th class="center aligned">کد پیگیری</th>
+                            <th class="center aligned">وضعیت رزرو</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center aligned">
+                                <span class="tablet-show">ردیف: </span>
+                                <span>1</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">نام هتل: </span>
+                                <img src="app/images/hotelGallery01.png" class="ui middle aligned tiny image m-radius mr15">
+                                <span class="ui header">ترنج کیش</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">نوع اتاق: </span>
+                                <span>دو تخته دوبل</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">تاریخ رزرو: </span>
+                                <span>۱۳۹۷/۱/۲۶</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">تاریخ ورود: </span>
+                                <span>۱۳۹۷/۱/۲۶</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">تعداد شب: </span>
+                                <span>3</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">قیمت (تومان): </span>
+                                <span>۳۰۰,۰۰۰</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">کد پیگیری: </span>
+                                <span>۱۴۹۲-۵۲۳۴</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">وضعیت رزرو: </span>
+                                <span>---</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned">
+                                <span class="tablet-show">ردیف: </span>
+                                <span>2</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">نام هتل: </span>
+                                <img src="app/images/hotelGallery02.png" class="ui middle aligned tiny image m-radius mr15">
+                                <span class="ui center aligned header">ترنج کیش</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">نوع اتاق: </span>
+                                <span>یک تخته</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">تاریخ رزرو: </span>
+                                <span>۱۳۹۷/۱/۲۶</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">تاریخ ورود: </span>
+                                <span>۱۳۹۷/۱/۲۶</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">تعداد شب: </span>
+                                <span>7</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">قیمت (تومان): </span>
+                                <span>۶۴۴,۰۰۰</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">کد پیگیری: </span>
+                                <span>۱۴۹۲-۵۲۳۴</span>
+                            </td>
+                            <td class="center aligned">
+                                <span class="tablet-show">وضعیت رزرو: </span>
+                                <span>---</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--</reservationInformation>-->
+
+            <!--<transactionInformation>-->
+            <div class="ui tab basic segment" data-tab="transaction-info">
+                <div class="header-section">
+                    <h2 class="header">تراکنش های من</h2>
+                    <h2 class="description">جهت بازرگشت مبلغ واریزی هنگام لغو رزرو</h2>
+                </div>
+
+                <table class="ui celled padded table m-shadowed m-radius">
+                    <thead>
+                    <tr>
+                        <th class="center aligned">ردیف</th>
+                        <th class="center aligned">عنوان</th>
+                        <th class="center aligned">نوع تراکنش</th>
+                        <th class="center aligned">مبلغ (تومان)</th>
+                        <th class="center aligned">تاریخ انجام</th>
+                        <th class="center aligned">وضعیت</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="center aligned">
+                            <span class="tablet-show">ردیف: </span>
+                            <span>1</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">عنوان: </span>
+                            <span class="ui header">رزرو هتل</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">نوع تراکنش: </span>
+                            <span>نقدی</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">قیمت (تومان): </span>
+                            <span>۳۲۰,۰۰۰</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">تاریخ انجام: </span>
+                            <span>۱۳۹۷/۱/۲۶</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">وضعیت: </span>
+                            <span>پرداخت شده</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center aligned">
+                            <span class="tablet-show">ردیف: </span>
+                            <span>2</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">عنوان: </span>
+                            <span class="ui header">رزرو هتل</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">نوع تراکنش: </span>
+                            <span>از طریق کارت</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">قیمت (تومان): </span>
+                            <span>۱۳۹۷/۱/۲۶</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">تاریخ انجام: </span>
+                            <span>۷۵۰,۰۰۰</span>
+                        </td>
+                        <td class="center aligned">
+                            <span class="tablet-show">وضعیت: </span>
+                            <span>در انتظار پرداخت</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--</transactionInformation>-->
+        </div>
+    </div>
+</div>
+
+<footer id="footer">
+
+    <!--<addressPhone>-->
+    <div class="footer-top">
+        <div class=" ui container">
+            <div class="ui stackable two column grid">
+                <div class="column left floated">
+                    <p>تهران، خیابان بهشتی، خیابان خالد استامبولی، کوچه ۲۳، پلاک ۷ | کدپستی ۱۲۳۴۵۶۷۸۹۰</p>
+                </div>
+                <div class="column right floated">
+                    <p>تلفن: ۴۳۴۵۶ | ۳۴۵۷۳۲۶۷</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</addressPhone>-->
+
+    <!--<subscribe&social>-->
+    <div class="footer-middle">
+        <div class="ui container">
+            <div class="ui stackable two column grid">
+                <div class="column subscribe-section">
+                    <h2 class="header">
+                        عضویت در خبرنامه ایمیلی:
+                    </h2>
+                    <div class="ui fluid action input">
+                        <input type="text" placeholder="پست الکترونیکی خود را وارد کنید...">
+                        <button class="ui yellow button">عضویت</button>
+                    </div>
+                    <p class="description">برای عضویت در خبرنامه پیامکی، عدد ۵ را به شماره ۴۶۷۳۳۵۶ پیامک کنید</p>
+                </div>
+                <div class="column social-section">
+                    <ul>
+                        <li class="linkedin">
+                            <a href="#">
+                                <img src="app/images/socialLinkedin.png">
+                            </a>
+                        </li>
+                        <li class="google-plus">
+                            <a href="#">
+                                <img src="app/images/socialGooglePlus.png">
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="#">
+                                <img src="app/images/socialTwitter.png">
+                            </a>
+                        </li>
+                        <li class="instagram">
+                            <a href="#">
+                                <img src="app/images/socialInstagram.png">
+                            </a>
+                        </li>
+                        <li class="facebook">
+                            <a href="#">
+                                <img src="app/images/socialFacebook.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</subscribe&social>-->
+
+    <!--<description&links>-->
+    <div class="footer-bottom">
+        <div class="ui container">
+            <div class="ui stackable two column centered grid">
+                <div class="column">
+                    <p>
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در زبان فارسی ایجادنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="ui three column centered grid">
+                        <div class="column">
+                            <h2 class="header">عنوان ۱</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2 class="header">عنوان ۲</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h2 class="header">عنوان ۳</h2>
+                            <ul>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                                <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</description&links>-->
+
+    <!--<copyright>-->
+    <div class="copyright">
+        <div class="ui container">
+            <p>تمامی حقوق مادی و معنوی این سایت متعلق به شرکت <a href="#">سراج</a> می باشد.</p>
+        </div>
+    </div>
+    <!--</copyright>-->
+</footer>
+
+</body>
+</html>
