@@ -20,7 +20,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-rtlcss": "^2.0.1",
     "gulp": "^3.9.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.2",
     "numeral": "^2.0.6",
     "persian-bootstrap-daterangepicker": "^2.1.35",
     "rtlcss": "^2.2.1",
