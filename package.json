@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "breakpoint-sass": "^2.7.1",
     "compass-sass-mixins": "^0.12.7",
     "fontello-sass": "^0.1.2",
