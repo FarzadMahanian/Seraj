@@ -19,12 +19,12 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-rtlcss": "^2.0.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "jquery-ui": "^1.12.1",
     "numeral": "^2.0.6",
     "persian-bootstrap-daterangepicker": "^2.1.35",
     "rtlcss": "^2.2.1",
-    "semantic-ui": "^2.3.1",
+    "semantic-ui": "^2.5.0",
     "slick-carousel": "^1.8.1"
   }
 }
